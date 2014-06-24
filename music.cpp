@@ -39,6 +39,7 @@ void music::Write(fstream &audio, ifstream &text)
 
             letter = i+1;
             WriteByte(44, letter, audio);
+            break;
         }
         else
         {

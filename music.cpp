@@ -32,8 +32,19 @@ void music::Write(fstream &audio, ifstream &text)
     // в цикле записываем текст
     for(int i = 0; i < textLen; i++)
     {
-        text.get(letter); // читаем символ
-        position = WriteByte(position, letter, audio); // передаем символ
+        if(audio.eof())
+        {
+            cout << "Audio file is less than the required!" << endl;
+            cout << i+1 << "symbols written" << endl;
+
+            letter = i+1;
+            WriteByte(44, letter, audio);
+        }
+        else
+        {
+            text.get(letter); // читаем символ
+            position = WriteByte(position, letter, audio); // передаем символ
+        }
     }
 }
 

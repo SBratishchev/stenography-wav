@@ -283,11 +283,11 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../lab/main.cpp ../lab/music.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../lab/main.cpp
+main.o: main.cpp music.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
-music.o: ../lab/music.cpp ../lab/music.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o music.o ../lab/music.cpp
+music.o: music.cpp music.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o music.o music.cpp
 
 ####### Install
 

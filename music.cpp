@@ -23,7 +23,10 @@ void music::Write(fstream &audio, ifstream &text)
     text.seekg(0);
 
     // длинна текста не должна привышать 1 байта или 255 символов
-    textLen &= 255;
+    if(textLen > 255)
+    {
+        textLen = 255;
+    }
     letter = textLen;
 
     // записываем длину текста
